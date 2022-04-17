@@ -1,2 +1,2 @@
-[localhost]
-localhost ansible_user=sowmithtemp
+40.81.233.34
+40.81.233.34 ansible_user=sowmith

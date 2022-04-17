@@ -59,6 +59,19 @@ pipeline {
                 sh 'docker build -t sowmithnandan1/calculator .'
                 }
         }
+        stage('Ansible')
+        {
+            agent any 
+            steps 
+                {
+                //This sh step executes pytest’s py.test command on sources/test_calc.py, which runs a set of
+                //unit tests (defined in test_calc.py) on the "calc" library’s add2 function.
+                //The --junit-xml test-reports/results.xml option makes py.test generate a JUnit XML report,
+                //which is saved to test-reports/results.xml
+                ansiblePlaybook credentialsId: 'ce1bf94f-69bd-4f29-a8fe-40f28838bd38', installation: 'AnsibleMain', 
+                 inventory: 'Inv.inv', limit: '40.81.233.34', playbook: 'Playbook.yml', sudo: true
+                }
+        }
         // stage('Deliver') {
         //             agent any
         //             //This environment block defines two variables which will be used later in the 'Deliver' stage.
