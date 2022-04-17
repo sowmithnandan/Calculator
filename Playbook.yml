@@ -1,0 +1,9 @@
+- name: Pull and Run docker image
+  hosts: all
+  tasks:
+    - name: Pull agamkashyap/calculator
+      docker_image:
+        name: agamkashyap/calculator
+        source: pull
+      vars:
+        - ansible_python_interpreter: /usr/bin/python
