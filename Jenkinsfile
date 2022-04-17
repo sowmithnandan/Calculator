@@ -68,6 +68,7 @@ pipeline {
                 //unit tests (defined in test_calc.py) on the "calc" library’s add2 function.
                 //The --junit-xml test-reports/results.xml option makes py.test generate a JUnit XML report,
                 //which is saved to test-reports/results.xml
+                sh 'ls'
                 ansiblePlaybook credentialsId: 'ce1bf94f-69bd-4f29-a8fe-40f28838bd38', installation: 'AnsibleMain', 
                  inventory: 'Inv.inv', limit: '40.81.233.34', playbook: 'Playbook.yml', sudo: true
                 }
