@@ -49,6 +49,7 @@ pipeline {
         }
         stage('Build')
         {
+            agent any 
             steps 
                 {
                 //This sh step executes pytest’s py.test command on sources/test_calc.py, which runs a set of
