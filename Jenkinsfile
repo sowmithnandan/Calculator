@@ -3,7 +3,7 @@ pipeline {
 //execution and that each stage directive must specify its own agent section.
     agent none
     stages {
-        stage('Build') {
+        stage('Pull') {
             agent {
                 docker {
                     //This image parameter (of the agent section’s docker parameter) downloads the python:2-alpine
@@ -14,7 +14,10 @@ pipeline {
             }
             steps {
                 //This sh step runs the Python command to compile your application and
-                //its calc library into byte code files, which are placed into the sources workspace directory
+                //its calc library into byte code 
+                
+                
+                iles, which are placed into the sources workspace directory
                 sh 'python -m py_compile calculator.py '
                 //This stash step saves the Python source code and compiled byte code files from the sources
                 //workspace directory for use in later stages.
@@ -47,37 +50,48 @@ pipeline {
                 }
             }
         }
-        stage('Deliver') {
-                    agent any
-                    //This environment block defines two variables which will be used later in the 'Deliver' stage.
-                    environment {
-                        VOLUME = '$(pwd)/src'
-                        IMAGE = 'cdrx/pyinstaller-linux:python2'
-                    }
-                    steps {
-                        //This dir step creates a new subdirectory named by the build number.
-                        //The final program will be created in that directory by pyinstaller.
-                        //BUILD_ID is one of the pre-defined Jenkins environment variables.
-                        //This unstash step restores the Python source code and compiled byte
-                        //code files (with .pyc extension) from the previously saved stash. image]
-                        //and runs this image as a separate container.
-                        dir(path: env.BUILD_ID) {
-                            unstash(name: 'compiled-results')
-
-                            //This sh step executes the pyinstaller command (in the PyInstaller container) on your simple Python application.
-                            //This bundles your add2vals.py Python application into a single standalone executable file
-                            //and outputs this file to the dist workspace directory (within the Jenkins home directory).
-                            sh "docker run --rm -v ${VOLUME} ${IMAGE} 'pyinstaller -F calculator.py'"
-                        }
-                    }
-                    post {
-                        success {
-                            //This archiveArtifacts step archives the standalone executable file and exposes this file
-                            //through the Jenkins interface.
-                            archiveArtifacts "${env.BUILD_ID}/dist/calculator"
-                            sh "docker run --rm -v ${VOLUME} ${IMAGE} 'rm -rf build dist'"
-                        }
-                    }
+        stage('Build')
+        {
+            steps 
+                {
+                //This sh step executes pytest’s py.test command on sources/test_calc.py, which runs a set of
+                //unit tests (defined in test_calc.py) on the "calc" library’s add2 function.
+                //The --junit-xml test-reports/results.xml option makes py.test generate a JUnit XML report,
+                //which is saved to test-reports/results.xml
+                sh 'docker build -t sowmithnandan1/calculator'
+                }
         }
+        // stage('Deliver') {
+        //             agent any
+        //             //This environment block defines two variables which will be used later in the 'Deliver' stage.
+        //             environment {
+        //                 VOLUME = '$(pwd)/src'
+        //                 IMAGE = 'cdrx/pyinstaller-linux:python2'
+        //             }
+        //             steps {
+        //                 //This dir step creates a new subdirectory named by the build number.
+        //                 //The final program will be created in that directory by pyinstaller.
+        //                 //BUILD_ID is one of the pre-defined Jenkins environment variables.
+        //                 //This unstash step restores the Python source code and compiled byte
+        //                 //code files (with .pyc extension) from the previously saved stash. image]
+        //                 //and runs this image as a separate container.
+        //                 dir(path: env.BUILD_ID) {
+        //                     unstash(name: 'compiled-results')
+
+        //                     //This sh step executes the pyinstaller command (in the PyInstaller container) on your simple Python application.
+        //                     //This bundles your add2vals.py Python application into a single standalone executable file
+        //                     //and outputs this file to the dist workspace directory (within the Jenkins home directory).
+        //                     sh "docker run --rm -v ${VOLUME} ${IMAGE} 'pyinstaller -F calculator.py'"
+        //                 }
+        //             }
+        //             post {
+        //                 success {
+        //                     //This archiveArtifacts step archives the standalone executable file and exposes this file
+        //                     //through the Jenkins interface.
+        //                     archiveArtifacts "${env.BUILD_ID}/dist/calculator"
+        //                     sh "docker run --rm -v ${VOLUME} ${IMAGE} 'rm -rf build dist'"
+        //                 }
+        //             }
+        // }
     }
 }
