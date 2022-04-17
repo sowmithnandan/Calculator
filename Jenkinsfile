@@ -70,8 +70,9 @@ pipeline {
                 //which is saved to test-reports/results.xml
                 sh 'pwd'
                 sh 'ls'
-                ansiblePlaybook credentialsId: 'ce1bf94f-69bd-4f29-a8fe-40f28838bd38', installation: 'AnsibleMain', inventory: '../../../../var/lib/jenkins/workspace/CalculatorMiniProject/Inv.inv', limit: '40.81.233.34', 
-                playbook: '../../../../var/lib/jenkins/workspace/CalculatorMiniProject/Playbook.yml', sudo: true
+                // ansiblePlaybook credentialsId: 'ce1bf94f-69bd-4f29-a8fe-40f28838bd38', installation: 'AnsibleMain', inventory: '../../../../var/lib/jenkins/workspace/CalculatorMiniProject/Inv.inv', limit: '40.81.233.34', 
+                // playbook: '../../../../var/lib/jenkins/workspace/CalculatorMiniProject/Playbook.yml', sudo: true
+                ansiblePlaybook colorized: true, disableHostKeyChecking: true, installation: "Ansible", inventory: 'Inv', playbook: 'Playbook.yml'
                 }
         }
         // stage('Deliver') {
@@ -81,7 +82,7 @@ pipeline {
         //                 VOLUME = '$(pwd)/src'
         //                 IMAGE = 'cdrx/pyinstaller-linux:python2'
         //             }
-        //             steps {
+        //             steps {+
         //                 //This dir step creates a new subdirectory named by the build number.
         //                 //The final program will be created in that directory by pyinstaller.
         //                 //BUILD_ID is one of the pre-defined Jenkins environment variables.
