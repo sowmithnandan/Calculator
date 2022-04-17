@@ -72,7 +72,7 @@ pipeline {
                 sh 'ls'
                 // ansiblePlaybook credentialsId: 'ce1bf94f-69bd-4f29-a8fe-40f28838bd38', installation: 'AnsibleMain', inventory: '../../../../var/lib/jenkins/workspace/CalculatorMiniProject/Inv.inv', limit: '40.81.233.34', 
                 // playbook: '../../../../var/lib/jenkins/workspace/CalculatorMiniProject/Playbook.yml', sudo: true
-                disableHostKeyChecking: true, installation: "AnsibleMain", inventory: 'Inv.inv', playbook: 'Playbook.yml'
+                disableHostKeyChecking: true, installation: "Ansible", inventory: 'Inv.inv', playbook: 'Playbook.yml'
                 }
         }
         // stage('Deliver') {
