@@ -62,7 +62,11 @@ pipeline {
                 //unit tests (defined in test_calc.py) on the "calc" library’s add2 function.
                 //The --junit-xml test-reports/results.xml option makes py.test generate a JUnit XML report,
                 //which is saved to test-reports/results.xml
-                sh 'docker build -t sowmithnandan1/calculator .'
+                // sh 'docker build -t sowmithnandan1/calculator .'
+                script
+                    {
+                    dockerImage = docker.build imagename
+                    }
                 }
         }
         stage('Docker Image push')
@@ -70,8 +74,11 @@ pipeline {
             agent any
             steps
                {
-                docker.withRegistry( '', registryCredential ){
-                dockerImage.push() 
+                script
+                    {
+                    docker.withRegistry( '', registryCredential ){
+                    dockerImage.push()
+                    } 
                 }
                 }
         }
