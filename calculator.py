@@ -100,7 +100,8 @@ if __name__ == '__main__':
                 print("Option not recognized")
         except:
             logging.error("[MASTER]Incorrect User Input detected")
-            break 
+            break
+    logging.info("[MASTER] Calculator program terminated") 
     print("Calculator Program has been forfeited");    
 
 
