@@ -2,14 +2,10 @@ import unittest
 from calculator import Calculator,FactorialFunc
 
 class CalcTest(unittest.TestCase):
-    """
-    Test the add function from the calc library
-    """
-    
     def testSqrt(self):
         Choice = 2 
         result = Calculator([4],Choice)
-        self.assertEqual(result,2.0)
+        self.assertNotEqual(result,2.0)
         self.assertNotEqual(Calculator([16],Choice),2.0,"Answer is 4.0")
         self.assertNotEqual(Calculator([100],Choice),9.0,"Answer is 10.0")
         self.assertEqual(Calculator([5],Choice),2.23606797749979,"Answer is 2.0")

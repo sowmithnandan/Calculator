@@ -74,7 +74,7 @@ if __name__ == '__main__':
                     continue 
                 print("Result is:"+str(result))
             elif Choice==4: 
-                print("Enter your number:")
+                print("Enter your number:  ")
                 Number1 = int(input())
                 logging.info("[NATLOG] Getting the logarithm of" + str(Number1))
                 result = Calculator([Number1],Choice)

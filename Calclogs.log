@@ -1,0 +1,55 @@
+2022-04-18 02:56:23 INFO-[MASTER] Options are printed on the users screen
+2022-04-18 02:56:25 INFO-[Master] Init Calculator
+2022-04-18 02:56:27 INFO-[SQRT] Getting Square Root of 4
+2022-04-18 02:56:27 INFO-[MASTER] Options are printed on the users screen
+2022-04-18 02:56:28 INFO-[Master] Init Calculator
+2022-04-18 02:56:29 INFO-[SQRT] Getting Square Root of -1
+2022-04-18 02:56:29 ERROR-[SQRT] input less than zero
+2022-04-18 02:56:29 INFO-[MASTER] Restarting Calculator 
+2022-04-18 02:56:29 INFO-[MASTER] Options are printed on the users screen
+2022-04-18 02:56:30 INFO-[Master] Init Calculator
+2022-04-18 02:56:33 INFO-[FACTORIAL] Getting the factorial of6
+2022-04-18 02:56:33 INFO-[MASTER] Options are printed on the users screen
+2022-04-18 02:56:35 INFO-[Master] Init Calculator
+2022-04-18 02:56:36 INFO-[FACTORIAL] Getting the factorial of-2
+2022-04-18 02:56:36 ERROR-[FACTORIAL] input less than zero
+2022-04-18 02:56:36 INFO-[MASTER] Restarting Calculator 
+2022-04-18 02:56:36 INFO-[MASTER] Options are printed on the users screen
+2022-04-18 02:56:39 INFO-[Master] Init Calculator
+2022-04-18 02:56:40 INFO-[NATLOG] Getting the logarithm of12
+2022-04-18 02:56:40 INFO-[MASTER] Options are printed on the users screen
+2022-04-18 02:56:42 INFO-[Master] Init Calculator
+2022-04-18 02:56:44 INFO-[NATLOG] Getting the logarithm of-5
+2022-04-18 02:56:44 ERROR-[NATLOG] input less than or equal to zero
+2022-04-18 02:56:44 INFO-[MASTER] Restarting Calculator 
+2022-04-18 02:56:44 INFO-[MASTER] Options are printed on the users screen
+2022-04-18 02:56:45 INFO-[Master] Init Calculator
+2022-04-18 02:56:47 INFO-[POW] Returning 1 Raised to the power of 1
+2022-04-18 02:56:47 INFO-[MASTER] Options are printed on the users screen
+2022-04-18 02:56:48 INFO-[Master] Init Calculator
+2022-04-18 02:56:50 ERROR-[POW] base is 0
+2022-04-18 02:56:50 INFO-[MASTER] Restarting Calculator 
+2022-04-18 02:56:50 INFO-[MASTER] Options are printed on the users screen
+2022-04-18 02:56:52 INFO-[Master] Init Calculator
+2022-04-18 02:56:52 INFO-[MASTER] Calculator program terminated
+2022-04-18 03:22:11 INFO-[MASTER] Options are printed on the users screen
+2022-04-18 03:22:15 INFO-[Master] Init Calculator
+2022-04-18 03:22:16 INFO-[SQRT] Getting Square Root of 4
+2022-04-18 03:22:16 INFO-[MASTER] Options are printed on the users screen
+2022-04-18 03:22:18 INFO-[Master] Init Calculator
+2022-04-18 03:22:18 INFO-[MASTER] Calculator program terminated
+2022-04-18 10:33:48 INFO-[MASTER] Options are printed on the users screen
+2022-04-18 10:33:57 INFO-[Master] Init Calculator
+2022-04-18 10:33:58 INFO-[FACTORIAL] Getting the factorial of5
+2022-04-18 10:33:58 INFO-[MASTER] Options are printed on the users screen
+2022-04-18 10:33:59 INFO-[Master] Init Calculator
+2022-04-18 10:33:59 INFO-[MASTER] Calculator program terminated
+2022-04-18 10:47:53 INFO-[MASTER] Options are printed on the users screen
+2022-04-18 10:47:55 INFO-[Master] Init Calculator
+2022-04-18 10:47:55 INFO-[MASTER] Calculator program terminated
+2022-04-18 11:00:03 INFO-[MASTER] Options are printed on the users screen
+2022-04-18 11:00:08 ERROR-[MASTER]Incorrect User Input detected
+2022-04-18 11:00:08 INFO-[MASTER] Calculator program terminated
+2022-04-18 11:00:20 INFO-[MASTER] Options are printed on the users screen
+2022-04-18 11:50:11 ERROR-[MASTER]Incorrect User Input detected
+2022-04-18 11:50:12 INFO-[MASTER] Calculator program terminated

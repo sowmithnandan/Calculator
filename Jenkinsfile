@@ -35,7 +35,7 @@ pipeline {
                 }
             }
         }
-        stage('Build')
+        stage('Docker Build')
         {
             agent any 
             steps 
